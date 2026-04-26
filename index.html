@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twister Family – Kénitra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">TWISTER</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo">
+      <span class="logo-text">TWISTER</span>
+      <span class="logo-sub">FAMILY</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link">Accueil</a></li>
+      <li><a href="#menu" class="nav-link">Menu</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="#" class="nav-cta" id="navCartBtn">🛒 <span id="navCartCount">0</span></a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-noise"></div>
+  <div class="hero-content">
+    <p class="hero-label">🔥 Livraison partout à Kénitra</p>
+    <h1 class="hero-title">
+      <span class="hero-t1">TWISTER</span>
+      <span class="hero-t2">FAMILY</span>
+    </h1>
+    <p class="hero-desc">Fast-food premium au cœur de Kénitra.<br>Tacos · Pizza · Burgers · Sandwichs · Wraps</p>
+    <div class="hero-actions">
+      <a href="#menu" class="btn-primary">Explorer le Menu</a>
+      <a href="https://wa.me/212677766387" target="_blank" class="btn-ghost">📲 Commander</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Plats</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">10 DH</span><span class="stat-label">Prix min</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">⚡</span><span class="stat-label">Livraison rapide</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MENU SECTION -->
+<section id="menu" class="menu-section">
+  <div class="section-header">
+    <p class="section-tag">Notre Carte</p>
+    <h2 class="section-title">Le Menu Complet</h2>
+    <p class="section-sub">Cliquez sur une catégorie pour voir tous les items</p>
+  </div>
+
+  <!-- Category Tabs -->
+  <div class="cat-tabs" id="catTabs">
+    <button class="cat-tab active" data-cat="plats">🍽 Plats</button>
+    <button class="cat-tab" data-cat="pizza">🍕 Pizza</button>
+    <button class="cat-tab" data-cat="tacos">🌯 Tacos</button>
+    <button class="cat-tab" data-cat="burger">🍔 Burgers</button>
+    <button class="cat-tab" data-cat="panini">🥪 Panini</button>
+    <button class="cat-tab" data-cat="sandwich">🥖 Sandwich & Wrap</button>
+    <button class="cat-tab" data-cat="boisson">🥤 Boissons</button>
+    <button class="cat-tab" data-cat="kids">👶 Kids</button>
+  </div>
+
+  <!-- Menu Grid -->
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<!-- SUPER CHOIX SECTION -->
+<section class="super-section">
+  <div class="super-bg"></div>
+  <div class="super-content">
+    <p class="section-tag">Premium</p>
+    <h2 class="section-title">Les Super Choix</h2>
+    <p class="section-sub">Des formules complètes pour les grands appétits</p>
+    <div class="super-grid">
+      <div class="super-card" data-item="Super Mega" data-price="55">
+        <div class="super-badge">⭐ BEST</div>
+        <div class="super-icon">🍽</div>
+        <h3>Super Mega</h3>
+        <p>Sandwich géant + frites + salade</p>
+        <span class="super-price">55 DH</span>
+        <button class="btn-add-mini" onclick="addToCart('Super Mega', 55)">+ Ajouter</button>
+      </div>
+      <div class="super-card" data-item="Super Tower" data-price="50">
+        <div class="super-icon">🌯</div>
+        <h3>Super Tower</h3>
+        <p>Tower + frites + salade maison</p>
+        <span class="super-price">50 DH</span>
+        <button class="btn-add-mini" onclick="addToCart('Super Tower', 50)">+ Ajouter</button>
+      </div>
+      <div class="super-card featured" data-item="Super Wrap" data-price="55">
+        <div class="super-badge">🔥 POP</div>
+        <div class="super-icon">🥗</div>
+        <h3>Super Wrap</h3>
+        <p>Wrap maison + frites + salade</p>
+        <span class="super-price">55 DH</span>
+        <button class="btn-add-mini" onclick="addToCart('Super Wrap', 55)">+ Ajouter</button>
+      </div>
+      <div class="super-card" data-item="Super Panini" data-price="50">
+        <div class="super-icon">🥪</div>
+        <h3>Super Panini</h3>
+        <p>Panini + frites + salade</p>
+        <span class="super-price">50 DH</span>
+        <button class="btn-add-mini" onclick="addToCart('Super Panini', 50)">+ Ajouter</button>
+      </div>
+      <div class="super-card" data-item="Super Chicken" data-price="50">
+        <div class="super-icon">🍗</div>
+        <h3>Super Chicken</h3>
+        <p>Poulet crispy + frites + salade</p>
+        <span class="super-price">50 DH</span>
+        <button class="btn-add-mini" onclick="addToCart('Super Chicken', 50)">+ Ajouter</button>
+      </div>
+      <div class="super-card" data-item="Super Burger" data-price="55">
+        <div class="super-badge">💎 PREMIUM</div>
+        <div class="super-icon">🍔</div>
+        <h3>Super Burger</h3>
+        <p>Burger gourmet + frites + salade</p>
+        <span class="super-price">55 DH</span>
+        <button class="btn-add-mini" onclick="addToCart('Super Burger', 55)">+ Ajouter</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <p class="section-tag">Nous Contacter</p>
+      <h2 class="contact-title">Commandez<br><em>Maintenant</em></h2>
+      <div class="contact-items">
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div>
+            <p class="contact-label">Téléphone / WhatsApp</p>
+            <a href="tel:+212677766387" class="contact-value">06.77.76.63.87</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <p class="contact-label">Ville</p>
+            <p class="contact-value">Kénitra, Maroc</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🛵</span>
+          <div>
+            <p class="contact-label">Livraison</p>
+            <p class="contact-value">Partout à Kénitra</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <div>
+            <p class="contact-label">Réseaux Sociaux</p>
+            <p class="contact-value">@Twister_family</p>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/212677766387" target="_blank" class="btn-primary wa-btn">
+        💬 Commander sur WhatsApp
+      </a>
+    </div>
+    <div class="contact-visual">
+      <div class="cv-card">
+        <div class="cv-logo">TF</div>
+        <p class="cv-title">TWISTER FAMILY</p>
+        <p class="cv-sub">Fast-Food Premium · Kénitra</p>
+        <div class="cv-divider"></div>
+        <p class="cv-hours">Livraison 7j/7</p>
+        <p class="cv-phone">06.77.76.63.87</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">TWISTER <span>FAMILY</span></div>
+    <p class="footer-desc">Fast-food premium au cœur de Kénitra, Maroc.</p>
+    <div class="footer-socials">
+      <a href="#" class="social-link">Instagram</a>
+      <a href="#" class="social-link">Facebook</a>
+      <a href="#" class="social-link">TikTok</a>
+    </div>
+    <p class="footer-copy">© 2025 Twister Family · Kénitra · Tous droits réservés</p>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/212677766387" target="_blank" class="wa-float" title="Commander sur WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+  </svg>
+</a>
+
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3>🛒 Ma Commande</h3>
+    <button class="cart-close" id="cartClose">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <p>🍽</p>
+      <p>Votre panier est vide</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">0 DH</span>
+    </div>
+    <button class="btn-primary full-width" id="whatsappOrder">💬 Commander sur WhatsApp</button>
+    <button class="btn-ghost full-width" id="clearCart">🗑 Vider le panier</button>
+  </div>
+</div>
+
+<!-- ITEM MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-header">
+      <span class="modal-cat-icon" id="modalIcon"></span>
+      <h2 class="modal-title" id="modalTitle"></h2>
+    </div>
+    <div class="modal-items" id="modalItems"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
