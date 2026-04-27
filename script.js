@@ -28,7 +28,7 @@ const menuData = {
     icon: "🍕",
     badge: "Fait maison",
     items: [
-      { name: "Pizza Margherita", price: 35, img: "images/pizza_margherita.jpg" },
+      { name: "Pizza Margherita", price: 35, img: "pizza_margherita.jpg" },
       { name: "Pizza Végétarienne", price: 40, desc: "Sauce tomate, mozzarella, champignons, olives, brocolis" },
       { name: "Pizza Pepperoni", price: 45, desc: "Sauce tomate, mozzarella, pepperoni" },
       { name: "Pizza Carbonara", price: 45, desc: "Sauce blanche, mozzarella, dinde fumée, champignons, œuf" },
