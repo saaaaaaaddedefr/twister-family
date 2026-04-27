@@ -188,13 +188,15 @@ function renderMenuGrid(cat) {
   const data = menuData[cat];
   if (!data) return;
 
-  // Show first 6 items as cards
   const items = data.items.slice(0, 6);
   const hasMore = data.items.length > 6;
 
   grid.innerHTML = items.map((item, i) => `
     <div class="menu-card fade-in" style="animation-delay:${i * 0.07}s" onclick="openModal('${cat}')">
-      <span class="menu-card-icon">${data.icon}</span>
+      ${item.img 
+        ? `<img src="${item.img}" alt="${item.name}" style="width:100%;height:180px;object-fit:cover;border-radius:10px;margin-bottom:12px;">` 
+        : `<span class="menu-card-icon">${data.icon}</span>`
+      }
       ${data.badge ? `<div class="menu-card-badge">${data.badge}</div>` : ''}
       <div class="menu-card-name">${item.name}</div>
       <div class="menu-card-desc">${item.desc}</div>
